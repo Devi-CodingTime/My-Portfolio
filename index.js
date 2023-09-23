@@ -195,7 +195,7 @@ document.getElementById("contact_button").addEventListener("click",()=>{
         Subject : "Message from Contact Form",
         Body : body
     }).then(
-      (message) => {alert(message)
+      (message) => {alert("Thanks! for submitting the form, I will reach you soon....")
         window.location.reload();
     }
     ); 
