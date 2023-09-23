@@ -203,59 +203,55 @@ document.getElementById("contact_button").addEventListener("click",()=>{
 
 // ----------------------------form Validation ----------------------------------
 
-// const form = document.getElementById('contact-form');
-// const username = document.getElementById('name');
-// const email = document.getElementById('email');
+const form = document.getElementById('contact-form').value;
 
-// form.addEventListener('submit', e => {
-//     e.preventDefault();
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    const username = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    var nameErr = emailErr = true;
 
-//     validateInputs();
-// });
+     // Validate name
+    if(username.value == "") 
+    {
+        printError("nameErr", "Please enter your name");
+    } 
+    else 
+    {
+        var regex = /^[a-zA-Z\s]+$/;                
+        if(regex.test(username) === false) 
+        {
+            printError("nameErr", "Please enter a valid name");
+        } 
+        else 
+        {
+            printError("nameErr", "");
+            nameErr = false;
+        }
+    }
+    
+    // Validate email address
+    if(email == "") 
+    {
+        printError("emailErr", "Please enter your email address");
+    } 
+    else 
+    {
+        // Regular expression for basic email validation
+        var regex = /^\S+@\S+\.\S+$/;
+        if(regex.test(email) === false) 
+        {
+            printError("emailErr", "Please enter a valid email address");
+        } 
+        else
+        {
+            printError("emailErr", "");
+            emailErr = false;
+        }
+    }
+});
 
-// const setError = (element, message) => {
-//     const inputControl = element.parentElement;
-//     const errorDisplay = inputControl.querySelector('.error');
-
-//     errorDisplay.innerText = message;
-//     inputControl.classList.add('error');
-//     inputControl.classList.remove('success')
-// }
-
-// const setSuccess = element => {
-//     const inputControl = element.parentElement;
-//     const errorDisplay = inputControl.querySelector('.error');
-
-//     errorDisplay.innerText = '';
-//     inputControl.classList.add('success');
-//     inputControl.classList.remove('error');
-// };
-
-// const isValidEmail = email => {
-//     const check = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//     return check.test(String(email).toLowerCase());
-// }
-
-// const validateInputs = () => {
-//     const usernameValue = username.value.trim();
-//     const emailValue = email.value.trim();
-
-//     if(usernameValue === '') {
-//         setError(username, 'Username is required');
-//     } else {
-//         setSuccess(username);
-//     }
-
-//     if(emailValue === '') {
-//         setError(email, 'Email is required');
-//     } 
-//     else if (!isValidEmail(emailValue)) 
-//     {
-//         setError(email, 'Provide a valid email address');
-//     } 
-//     else 
-//     {
-//         setSuccess(email);
-//     }
-
-// };
+function printError(elemId, hintMsg) 
+{
+    document.getElementById(elemId).innerHTML = hintMsg;
+}
