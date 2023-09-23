@@ -214,14 +214,16 @@ form.addEventListener('submit', e => {
      // Validate name
     if(username.value == "") 
     {
-        printError("nameErr", "Please enter your name");
+        document.getElementById('name').classList.add("error");
+        // printError("nameErr", "Please enter your name");
     } 
     else 
     {
         var regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(username) === false) 
         {
-            printError("nameErr", "Please enter a valid name");
+            document.getElementById('name').classList.add("error");
+            // printError("nameErr", "Please enter a valid name");
         } 
         else 
         {
@@ -233,7 +235,8 @@ form.addEventListener('submit', e => {
     // Validate email address
     if(email == "") 
     {
-        printError("emailErr", "Please enter your email address");
+        document.getElementById('email').classList.add("error");
+        // printError("emailErr", "Please enter your email address");
     } 
     else 
     {
@@ -241,11 +244,13 @@ form.addEventListener('submit', e => {
         var regex = /^\S+@\S+\.\S+$/;
         if(regex.test(email) === false) 
         {
-            printError("emailErr", "Please enter a valid email address");
+            document.getElementById('email').classList.add("error");
+            // printError("emailErr", "Please enter a valid email address");
         } 
         else
         {
-            printError("emailErr", "");
+            document.getElementById('email').classList.add("error");
+            // printError("emailErr", "");
             emailErr = false;
         }
     }

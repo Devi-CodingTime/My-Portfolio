@@ -55,6 +55,12 @@ section
     border-radius: 50px;
     box-shadow: 10px 10px 17px -1px rgba(10,77,104,1);
 }
+.primary-button:hover
+{
+    color: rgb(6, 180, 6);
+    box-shadow: 0px 4px 43px 13px var(--primary-color);
+    background-color: var(--primary-color);
+}
 .buttons
 {
     margin-top: 3rem;
@@ -68,6 +74,14 @@ section
     width: 50px;
     font-size: 2.5rem;
     color:var(--primary-color);
+}
+
+.primary-button i
+{
+    color: white;
+}
+.primary-button i:hover{
+    color: rgb(6, 180, 6);
 }
 p
 {
@@ -391,7 +405,7 @@ p
 /* services */
 #services
 {
-    margin-top: 2rem;
+    padding-top: 2rem;
     padding-bottom: 2rem;
     background-image: url("Image/experience.jpg");
     background-repeat: no-repeat;
@@ -638,7 +652,7 @@ p
     color: white;
     text-shadow: 0 0 3px var(--primary-color), 0 0 5px rgb(6, 180, 6);
     margin-left:2rem;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 500;
     line-height: 3rem;
 }
@@ -668,12 +682,6 @@ p
     font-size: 30px;
     font-weight: 700;
 }
-/* .text
-{
-    color: rgb(6, 180, 6);;
-    font-weight: 300;
-    font-size: 1.5rem;
-} */
 /* end of today code */
 
 #skills .container .item
@@ -690,7 +698,7 @@ p
 /* Project section */
 #projects
 {
-    /* margin-top: 2rem; */
+    padding-top: 2rem;
     /* padding: 8rem 0 0 0; */
     background-image: url("Image/project2.jpg");
     background-repeat: no-repeat;
@@ -821,7 +829,7 @@ p
 #contact
 {
     margin-bottom: 1rem;
-    /* padding: 8rem 0; */
+    padding-top: 2rem;
     background-image: url("Image/contact.webp");
     background-repeat: no-repeat;
     background-size: cover;
@@ -991,8 +999,8 @@ p
 */
 .error {
     border-color: #ff3860;
-    color: red;
-    font-size: 90%;
+    /* color: red;
+    font-size: 90%; */
 } 
 @media only screen and (max-width:768px)
 {
@@ -1073,7 +1081,9 @@ p
     padding: 0.5rem;
 }
 #footer footer ul li:hover a{
- color: rgb(6, 180, 6);
+    color: #0A4D68;
+    box-shadow: 0px 4px 43px 13px rgb(6, 180, 6);
+    background-color: rgb(6, 180, 6);
 }
 #footer footer ul li:hover
 {
